@@ -19,6 +19,14 @@ print(f"Кількість вузлів: {num_nodes}\n"
       f"Кількість ребер: {num_edges}\n"
       f"Чи є граф сполученим (зв’язним): {is_connected}")
 
+# DFS
+dfs_tree = nx.dfs_tree(G, source='User')
+print(list(dfs_tree.edges()))  # виведе ребра DFS-дерева з коренем у вузлі User
+
+# BFS
+bfs_tree = nx.bfs_tree(G, source='User')
+print(list(bfs_tree.edges()))  # виведе ребра BFS-дерева з коренем у вузлі User
+
 
 options = {
     "node_color": "yellow",
@@ -29,18 +37,3 @@ options = {
 }
 nx.draw(G, **options)
 plt.show()
-
-
-"""
-Напишіть програму, яка використовує алгоритми DFS і BFS для знаходження шляхів у графі, який було розроблено у першому завданні.
-
-Далі порівняйте результати виконання обох алгоритмів для цього графа, висвітлить різницю в отриманих шляхах. 
-Поясніть, чому шляхи для алгоритмів саме такі."""
-
-# DFS
-dfs_tree = nx.dfs_tree(G, source='User')
-print(list(dfs_tree.edges()))  # виведе ребра DFS-дерева з коренем у вузлі User
-
-# BFS
-bfs_tree = nx.bfs_tree(G, source='User')
-print(list(bfs_tree.edges()))  # виведе ребра BFS-дерева з коренем у вузлі User
